@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Pixel Computers</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 30px;
+      width: 320px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      color: #fff;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+      font-size: 15px;
+    }
+
+    input {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    input::placeholder {
+      color: #eee;
+    }
+
+    input:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    button {
+      background-color: #fff;
+      color: #2193b0;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e0f7fa;
+    }
+
+    @media (max-width: 400px) {
+      .login-box {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Admin Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'ProEdu' && password === 'ProEdu2025') {
+        sessionStorage.setItem('loggedIn', 'true');
+        window.location.href = 'admin.html';
+      } else {
+        alert('❌ Invalid credentials. Please try again.');
+      }
+    });
+  </script>
+
+</body>
+</html>
