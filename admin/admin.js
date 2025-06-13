@@ -1,4 +1,4 @@
-const apiBase = 'http://localhost:3000/api';
+const apiBase = 'https://proedu-b99f.onrender.com/api';
 const dataStore = { blog: [], news: [], event: [], job: [] };
 const modal = new bootstrap.Modal(document.getElementById('itemModal'));
 const form = document.getElementById('itemForm');
