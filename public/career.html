@@ -129,7 +129,7 @@
 <script>
   async function loadJobs() {
     try {
-      const res = await fetch('http://localhost:3000/api/job');
+      const res = await fetch('/api/job');
       const jobs = await res.json();
       const jobScroll = document.getElementById('jobScroll');
       jobScroll.innerHTML = '';
